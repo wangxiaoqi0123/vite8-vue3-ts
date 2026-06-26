@@ -18,7 +18,7 @@ export default [
       'node_modules/',
       'index.html',
       'src/assets/iconfont/**',
-      '.eslintrc-auto-import.js',
+      '.eslintrc-auto-import.*',
       '**/.env',
       '**/.env.*',
       '**/pnpm-lock.yaml',
@@ -103,6 +103,7 @@ export default [
       // 关闭/调整 TypeScript 规则
       'no-debugger': 'off',
       'no-unused-vars': 'off', // 由 @typescript-eslint/no-unused-vars 替代
+      'no-useless-assignment': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/triple-slash-reference': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',

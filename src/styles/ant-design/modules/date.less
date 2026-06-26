@@ -1,0 +1,136 @@
+div.fs-picker-panel-container {
+  // 弹框内部按钮
+  .fs-picker-ok {
+    .fs-btn-sm {
+      min-width: 64px;
+    }
+  }
+  // time选择器交互样式调整
+  div.fs-picker-time-panel {
+    .fs-picker-time-panel-column {
+      width: auto;
+      padding: 4px 0px;
+
+      .fs-picker-time-panel-cell {
+        padding: 8px 12px;
+        width: 80px;
+        .fs-picker-time-panel-cell-inner {
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          padding: 0;
+          border-radius: 2px;
+          width: 100%;
+        }
+      }
+      .fs-picker-time-panel-cell-inner:hover {
+        background-color: var(--fs-buleGrey-base-2);
+      }
+      .fs-picker-time-panel-cell-selected {
+        .fs-picker-time-panel-cell-inner {
+          background-color: var(--fs-blue-base);
+          color: var(--fs-grey-1);
+        }
+      }
+    }
+
+    .fs-picker-time-panel-column::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  // 左右间距
+  div.fs-picker-header {
+    padding: 0px 12px;
+    .fs-picker-header-prev-btn {
+      margin-left: 4px;
+    }
+    .fs-picker-header-next-btn {
+      margin-right: 4px;
+    }
+  }
+
+  // 头部文本
+  .fs-picker-header-view {
+    button {
+      margin-left: 0px;
+    }
+  }
+}
+:where(.css-dev-only-do-not-override-oukips).fs-picker-dropdown
+  .fs-picker-time-panel-column
+  > li.fs-picker-time-panel-cell {
+  margin-inline: 0px;
+}
+
+// 隐藏弹框箭头
+div.fs-picker-dropdown-range {
+  padding: 0;
+  .fs-picker-range-wrapper {
+    .fs-picker-range-arrow {
+      display: none !important;
+    }
+  }
+}
+
+div.fs-picker {
+  padding: 6px 8px;
+}
+div.fs-picker-small {
+  padding: 2px 8px;
+}
+div.fs-picker-large {
+  padding: 10px 8px;
+}
+.fs-picker {
+  span.fs-picker-suffix,
+  span.fs-picker-clear {
+    font-size: 14px;
+    color: var(--fs-grey-base);
+  }
+  span.fs-picker-clear:hover {
+    color: var(--fs-grey-7);
+  }
+  .fs-picker-input input {
+    line-height: 18px;
+  }
+}
+
+div.fs-picker-range {
+  .fs-picker-clear {
+    right: 8px;
+  }
+  // 隐藏时间联动的底线
+  .fs-picker-active-bar {
+    display: none;
+  }
+}
+
+// range 输入框添加底部阴影
+.fs-picker-focused {
+  div.fs-picker-input-active::after {
+    content: '';
+    width: 100%;
+    height: 24px;
+    background-color: var(--fs-buleGrey-base-2);
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: -4px;
+    transform: translateY(-50%);
+    border-radius: var(--fs-radius-base);
+  }
+  .fs-picker-input-active > input {
+    z-index: 1;
+  }
+  &.fs-picker-small {
+    .fs-picker-input-active::after {
+      height: 16px;
+    }
+  }
+  &.fs-picker-large {
+    .fs-picker-input-active::after {
+      height: 32px;
+    }
+  }
+}

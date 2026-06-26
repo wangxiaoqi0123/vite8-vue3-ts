@@ -40,7 +40,6 @@ export default function createComponentsPlugin(mode: string) {
   if (mode === 'development') {
     fs.watch(configFile, eventType => {
       if (eventType === 'change') {
-        console.log('🔄 检测到 components/index.json 变化，重新加载...')
         loadComponentConfig()
       }
     })

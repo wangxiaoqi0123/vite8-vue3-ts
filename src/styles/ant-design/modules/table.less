@@ -1,0 +1,72 @@
+.fs-table-wrapper {
+  .fs-checkbox .fs-checkbox-inner {
+    width: 14px;
+    height: 14px;
+    &::after {
+      top: 5px;
+      left: 2px;
+    }
+  }
+  .fs-table-selection-column {
+    padding-right: 4px !important;
+    .fs-checkbox-wrapper {
+      margin-right: 0;
+      margin-left: 4px;
+    }
+  }
+
+  .fs-checkbox-indeterminate .fs-checkbox-inner {
+    &::after {
+      top: 6px;
+      left: 6px;
+    }
+  }
+  .fs-table-thead {
+    & > tr > th {
+      background-color: var(--fs-table-head-bg);
+      border-bottom: 0px;
+      color: #333;
+    }
+
+    .fs-table-cell::before {
+      visibility: hidden;
+    }
+    .fs-table-cell {
+      border-radius: 0px !important;
+    }
+  }
+  .fs-table-tbody {
+    // hover行颜色
+    .fs-table-row .fs-table-cell-row-hover {
+      background-color: var(--fs-buleGrey-base-2);
+    }
+    // 斑马线
+    .fs-table-row:nth-child(2n) td {
+      background-color: var(--fs-buleGrey-base-1);
+    }
+
+    tr.fs-table-expanded-row > td {
+      background-color: var(--fs-grey-2);
+    }
+  }
+
+  .fs-table-selection-column {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  // 处理树数据 展开收起icon
+  .fs-table-row-expand-icon {
+    border: 1px solid var(--fs-grey-7);
+    color: var(--fs-grey-7);
+    transform: scale(0.8235);
+    border-radius: 2px;
+  }
+}
+
+.fs-table-wrapper .fs-table-thead > tr > th,
+.fs-table-wrapper .fs-table-tbody > tr > td,
+.fs-table-wrapper tfoot > tr > th,
+.fs-table-wrapper tfoot > tr > td {
+  padding: 15px 16px;
+}

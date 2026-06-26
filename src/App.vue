@@ -1,7 +1,12 @@
+<template>
+  <ConfigProvider>
+    <RouterView />
+  </ConfigProvider>
+</template>
+
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { useSidebarExpansion } from './layout'
+useSidebarExpansion()
 </script>
 
-<template>
-  <HelloWorld />
-</template>
+<style scoped></style>

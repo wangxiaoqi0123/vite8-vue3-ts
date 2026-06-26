@@ -1,0 +1,60 @@
+.fs-cascader {
+  .fs-select-selection-overflow-item-suffix[style*='absolute']:has(.fs-select-selection-search) {
+    margin-top: 3px;
+  }
+}
+
+.fs-select-dropdown.fs-cascader-dropdown {
+  padding: 0px;
+  .fs-cascader-menus {
+    .fs-cascader-menu {
+      padding: 4px;
+      padding-bottom: 2px;
+      .fs-cascader-menu-item {
+        margin-bottom: 2px;
+        border-radius: 3px;
+        padding-left: 12px;
+        padding-right: 8px;
+        font-weight: 400;
+        font-size: 12px;
+
+        .fs-cascader-menu-item-content:not(:has(.fs-empty, .fs-cascader-menu-item-keyword)) {
+          max-width: 260px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+
+      // 复选框调整
+      .fsCheckboxFn(@checkbox-prefix-cls: ~'fs-cascader-checkbox');
+      .fs-cascader-checkbox-checked.fs-cascader-checkbox-disabled {
+        .fs-cascader-checkbox-inner::after {
+          border-color: var(--fs-grey-6);
+        }
+      }
+
+      .fs-cascader-menu-item:hover:not(.fs-cascader-menu-item-disabled) {
+        background-color: var(--fs-buleGrey-base-2);
+      }
+      .fs-cascader-menu-item-active {
+        background: var(--fs-blue-1);
+        color: var(--fs-blue-base);
+      }
+      .fs-cascader-menu-item:has(.fs-cascader-checkbox-checked) {
+        background: var(--fs-blue-1);
+        font-weight: 400;
+        color: var(--fs-blue-base);
+      }
+    }
+  }
+}
+
+.fs-select-dropdown.fs-cascader-dropdown
+  .fs-cascader-menus
+  .fs-cascader-menu
+  .fs-cascader-checkbox-checked
+  .fs-cascader-checkbox-inner::after {
+  top: 5px;
+  left: 2px;
+}

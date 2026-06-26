@@ -1,0 +1,133 @@
+.fs-modal-content {
+  .fs-modal-body {
+    max-height: calc(100vh - 148px);
+    overflow-y: auto;
+  }
+  .fs-modal-header {
+    padding: 12px 24px;
+    height: 48px;
+    .fs-modal-title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  .fs-modal-close {
+    top: 0px;
+    .fs-modal-close-x {
+      height: 48px;
+      line-height: 48px;
+    }
+  }
+  .fs-modal-footer {
+    height: 56px;
+    padding: 12px 24px;
+    block-size: border-box;
+    .fs-btn {
+      min-width: 80px;
+      line-height: 1;
+    }
+    .fs-btn + .fs-btn:not(.fs-dropdown-trigger) {
+      margin-left: 12px;
+    }
+    .fs-btn-primary {
+      & {
+        &:focus {
+          background-color: var(--fs-blue-base);
+          border-color: var(--fs-blue-base);
+          color: var(--fs-grey-1);
+        }
+        &:hover {
+          background-color: var(--fs-blue-5);
+          border-color: var(--fs-blue-5);
+          color: var(--fs-grey-1);
+        }
+        &:active {
+          background-color: var(--fs-blue-7);
+          border-color: var(--fs-blue-7);
+          color: var(--fs-grey-1);
+        }
+      }
+    }
+  }
+  .fs-modal-body:has(> .fs-form:last-child) {
+    padding-bottom: 0px;
+  }
+
+  // confirm
+  .fs-modal-body:has(> .fs-modal-confirm-body-wrapper:only-child) {
+    padding: 24px;
+    .fs-modal-confirm-body {
+      > .anticon {
+        margin-right: 8px;
+        line-height: 24px;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      > .fs-modal-confirm-title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+      > .fs-modal-confirm-content {
+        margin-left: 32px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--fs-grey-8);
+        line-height: 22px;
+      }
+    }
+    .fs-modal-confirm-btns {
+      .fs-btn {
+        min-width: 80px;
+        font-size: 14px;
+        line-height: 1;
+      }
+      .fs-btn-primary {
+        & {
+          &:focus {
+            background-color: var(--fs-blue-base);
+            border-color: var(--fs-blue-base);
+            color: var(--fs-grey-1);
+          }
+          &:hover {
+            background-color: var(--fs-blue-5);
+            border-color: var(--fs-blue-5);
+            color: var(--fs-grey-1);
+          }
+          &:active {
+            background-color: var(--fs-blue-7);
+            border-color: var(--fs-blue-7);
+            color: var(--fs-grey-1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-modal-confirm .ant-modal-body {
+  padding: 24px;
+  .ant-modal-confirm-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+  }
+  .ant-modal-confirm-content {
+    font-weight: 400;
+    font-size: 14px;
+    color: #666666;
+    line-height: 22px;
+  }
+  .ant-modal-confirm-btns .ant-btn {
+    min-width: 80px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .ant-modal-confirm-btns .ant-btn + .ant-btn {
+    margin-inline-start: 12px;
+  }
+}

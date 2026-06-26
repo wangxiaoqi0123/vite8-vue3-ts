@@ -1,0 +1,44 @@
+.fs-radio-box {
+  display: inline-block;
+  .fs-radio-inner {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .fs-radio:hover {
+    .fs-radio-inner {
+      border-color: var(--fs-grey-4) !important;
+      box-shadow:
+        -1px 0 #f1f4f8,
+        0 1px #f1f4f8,
+        1px 0 #f1f4f8,
+        0 -1px #f1f4f8;
+    }
+  }
+
+  .fs-radio-wrapper-disabled .fs-radio-disabled:hover {
+    .fs-radio-inner {
+      border-color: var(--fs-grey-4) !important;
+      box-shadow: none;
+    }
+    .fs-radio-disabled .fs-radio-inner {
+      background-color: var(--fs-grey-1);
+      border-color: var(--fs-grey-4) !important;
+      ::after {
+        background-color: var(--fs-grey-base);
+      }
+    }
+  }
+  .fs-radio-wrapper {
+    margin: 0 16px 0 0 !important;
+    line-height: 1.5 !important;
+  }
+
+  .fs-radio-checked:hover {
+    .fs-radio-inner {
+      border-color: var(--fs-blue-base) !important;
+    }
+  }
+  .fs-radio-wrapper-disabled .fs-radio-disabled:hover .fs-radio-inner {
+    border-color: var(--fs-grey-5) !important;
+  }
+}

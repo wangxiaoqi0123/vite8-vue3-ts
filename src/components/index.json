@@ -1,0 +1,8 @@
+{
+  "$schema": "./index.schema.json",
+  "$comment": "此文件服务于 vite-plugins 的组件自动导入功能",
+  "components": {
+    "ConfigProvider": "./business/configProvider/Index.vue",
+    "CollapseTransition": "./ui/collapseTransition/Index.vue"
+  }
+}

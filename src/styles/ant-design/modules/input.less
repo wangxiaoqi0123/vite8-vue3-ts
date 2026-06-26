@@ -1,0 +1,60 @@
+.fs-input,
+.fs-input-affix-wrapper {
+  padding: 5px 8px;
+}
+.fs-input-sm,
+.fs-input-affix-wrapper-sm {
+  padding: 1px 8px;
+}
+.fs-input-lg,
+.fs-input-affix-wrapper-lg {
+  padding: 8px 8px;
+}
+
+.fs-input-affix-wrapper {
+  .fs-input-suffix {
+    .fs-input-clear-icon {
+      font-size: 14px;
+      width: 10px;
+      height: 10px;
+      color: var(--fs-grey-base);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fs-input-clear-icon:hover {
+      color: var(--fs-grey-7);
+    }
+  }
+}
+
+.fs-input-number,
+.fs-input-number-affix-wrapper {
+  .fs-input-number-input {
+    padding-left: 8px;
+  }
+  .fs-input-number-handler {
+    height: 50% !important;
+  }
+  .fs-input-number-handler-up-inner,
+  .fs-input-number-handler-down-inner {
+    color: var(--fs-grey-base);
+    font-size: 8px !important;
+  }
+  .fs-input-number-handler-wrap {
+    opacity: 1;
+  }
+}
+
+.fs-input-textarea-show-count {
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+    font-size: 12px;
+  }
+}
+textarea.fs-input {
+  min-height: 88px;
+}

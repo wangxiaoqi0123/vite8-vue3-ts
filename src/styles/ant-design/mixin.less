@@ -1,0 +1,66 @@
+// vueComponent/ant-design-vue/components/checkbox/style/mixin.less
+.fsCheckboxFn(@checkbox-prefix-cls: ~'fs-checkbox') {
+  .@{checkbox-prefix-cls}-wrapper {
+    line-height: 1.5;
+    margin-right: 16px;
+  }
+
+  .@{checkbox-prefix-cls}-inner {
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--fs-grey-4);
+    border-radius: 2px;
+  }
+  .@{checkbox-prefix-cls}-indeterminate .@{checkbox-prefix-cls}-inner::after {
+    height: 1.5px !important;
+    background-color: var(--fs-grey-1);
+    width: 8px;
+  }
+  .@{checkbox-prefix-cls}-indeterminate .@{checkbox-prefix-cls}-inner {
+    background-color: var(--fs-blue-base);
+    border-color: var(--fs-blue-base);
+  }
+  .@{checkbox-prefix-cls}-checked .@{checkbox-prefix-cls}-inner::after {
+    border: 1.5px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    top: 6px;
+    left: 3px;
+    transition: none;
+  }
+
+  //hove 效果
+  .@{checkbox-prefix-cls}:hover .@{checkbox-prefix-cls}-inner {
+    box-shadow:
+      -1px 0 var(--fs-buleGrey-base-2),
+      0 1px var(--fs-buleGrey-base-2),
+      1px 0 var(--fs-buleGrey-base-2),
+      0 -1px var(--fs-buleGrey-base-2);
+  }
+
+  .@{checkbox-prefix-cls}-checked .@{checkbox-prefix-cls}-inner {
+    border: 1px solid var(--fs-blue-base);
+  }
+
+  .@{checkbox-prefix-cls}-checked::after {
+    border: none;
+    animation: none;
+  }
+
+  // 禁选
+  .@{checkbox-prefix-cls}-wrapper-disabled {
+    span {
+      color: var(--fs-grey-6);
+    }
+  }
+  .@{checkbox-prefix-cls}-disabled:hover .@{checkbox-prefix-cls}-inner {
+    box-shadow: none;
+  }
+  .@{checkbox-prefix-cls}-disabled .@{checkbox-prefix-cls}-inner {
+    background-color: var(--fs-grey-3);
+    border-color: var(--fs-grey-4);
+  }
+  .@{checkbox-prefix-cls}-wrapper-disabled .@{checkbox-prefix-cls}-disabled .@{checkbox-prefix-cls}-inner::after {
+    border-color: var(--fs-grey-6);
+  }
+}

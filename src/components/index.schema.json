@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "组件自动导入配置",
+  "description": "用于 vite-plugins 组件自动导入的配置文件",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema 引用"
+    },
+    "$comment": {
+      "type": "string",
+      "description": "配置文件说明"
+    },
+    "components": {
+      "type": "object",
+      "description": "组件映射表，key 为组件名称，value 为组件文件路径（相对于 src/components 目录）",
+      "patternProperties": {
+        "^[A-Z][a-zA-Z0-9]*$": {
+          "type": "string",
+          "pattern": "^\\./.*\\.vue$",
+          "description": "组件文件路径，必须以 ./ 开头，以 .vue 结尾"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["components"],
+  "additionalProperties": true
+}

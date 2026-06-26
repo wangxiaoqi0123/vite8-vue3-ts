@@ -1,0 +1,32 @@
+export interface IUserInfo {
+  token: string
+  lang?: any
+  userId: number
+  italentId: number
+  userType: number
+  userName: string
+  cnName: string
+  enName: string
+  deptId: number
+  deptName: string
+  italentDeptId: number
+  deptType: number
+  deptIdList: number[]
+  deptSortIdList: number[]
+  jobPostId: string
+  jobPost: string
+  jobPostIdList: number[]
+  userAgent: string
+  roleIdList: number[]
+  roleCodeList: string[]
+  uuid: string
+  sex: number
+  avatar?: any
+  email: string
+  adminId: number
+  uid: number
+  fsId: string
+  fsNo: string
+  phone: string
+  dateTimes: string[]
+}

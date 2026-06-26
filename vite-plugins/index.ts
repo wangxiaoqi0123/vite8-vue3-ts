@@ -1,15 +1,14 @@
 import vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
 import legacy from '@vitejs/plugin-legacy'
-import autoImport from './autoImport'
-import components from './components'
-import analyze from './analyze'
-import updateNotice from './updateNotice'
-import { svgIcons } from './svgIcons'
-import sentry from './sentry'
+import autoImport from './autoImport.ts'
+import components from './components.ts'
+import analyze from './analyze.ts'
+import updateNotice from './updateNotice.ts'
+import { svgIcons } from './svgIcons.ts'
+import sentry from './sentry.ts'
 
 export default function setupPlugins(mode, release) {
-  console.log('release :>> ', release)
   return [
     vue(),
     Unocss(),

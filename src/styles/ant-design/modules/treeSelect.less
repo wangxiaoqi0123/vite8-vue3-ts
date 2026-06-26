@@ -1,0 +1,79 @@
+.fs-tree-select-dropdown .fs-select-tree {
+  padding: 0 4px;
+  .fs-select-tree-treenode {
+    padding: calc(var(--fs-len-base) / 2) 0;
+    width: 100%;
+    padding-right: 12px;
+  }
+  &.fs-select-tree-show-line {
+    .fs-select-tree-treenode {
+      margin-top: 0;
+    }
+    .fs-select-tree-indent-unit {
+      &::before {
+        top: -4px;
+        bottom: -4px;
+      }
+    }
+  }
+  .fs-select-tree-treenode-leaf-last .fs-select-tree-switcher-leaf-line {
+    &::before {
+      top: -4px !important;
+    }
+    &::after {
+      height: 10px !important;
+    }
+  }
+}
+
+.fs-tree-select-dropdown {
+  .fs-select-tree .fs-select-tree-node-content-wrapper:hover {
+    background-color: transparent;
+  }
+  .fs-select-tree .fs-select-tree-treenode:hover {
+    background-color: var(--fs-buleGrey-base-2);
+    .fs-select-tree-checkbox + span:hover {
+      background-color: var(--fs-buleGrey-base-2);
+    }
+  }
+  .fs-select-tree .fs-select-tree-node-content-wrapper.fs-select-tree-node-selected {
+    background-color: transparent;
+  }
+  .fs-select-tree .fs-select-tree-treenode.fs-select-tree-treenode-selected {
+    background-color: var(--fs-blue-1);
+    .fs-select-tree-title {
+      color: var(--fs-blue-base);
+    }
+  }
+  .fs-select-tree-show-line .fs-select-tree-switcher {
+    background-color: transparent;
+  }
+  .fs-select-tree .fs-select-tree-checkbox {
+    margin-inline-end: 4px;
+    margin-block-start: 0px;
+    .fs-select-tree-checkbox-inner {
+      &::after {
+        top: 6px;
+        border-width: 1px;
+      }
+    }
+  }
+  .fs-select-tree .fs-select-tree-checkbox-indeterminate .fs-select-tree-checkbox-inner {
+    background-color: var(--fs-blue-base);
+    border-color: var(--fs-blue-base);
+    &::after {
+      top: 50%;
+      height: 1.5px;
+      width: 10px;
+      border-radius: 2px;
+      border-width: 1px;
+      background-color: var(--fs-grey-1);
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+  }
+
+  .fs-select-tree .fs-select-tree-switcher {
+    height: 14px;
+    line-height: 26px;
+  }
+}

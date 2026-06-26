@@ -1,0 +1,203 @@
+.fs-select .fs-select-selector {
+  padding-left: 8px !important;
+  padding-right: 28px !important;
+  .fs-select-selection-search {
+    inset-inline-start: 8px;
+    inset-inline-end: 8px;
+  }
+  // 搜索光标
+  .fs-select-selection-overflow-item-suffix > .fs-select-selection-search {
+    inset-inline-start: 3px;
+    inset-inline-end: 0px;
+    margin-left: 0px;
+  }
+}
+.fs-select.fs-select-multiple .fs-select-selector {
+  padding-left: 4px !important;
+  padding-right: 28px !important;
+}
+
+.fs-select {
+  // 按钮
+  span.fs-select-clear,
+  span.fs-select-arrow {
+    font-size: 14px;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fs-grey-base);
+  }
+  span.fs-select-arrow .fs-select-suffix {
+    font-size: 13px;
+  }
+  span.fs-select-clear:hover {
+    color: var(--fs-grey-7);
+  }
+}
+
+.fs-select-disabled.fs-select:not(.fs-select-customize-input) .fs-select-selector {
+  color: var(--fs-grey-7);
+}
+
+// 重写选中颜色
+.fs-select-item-option-selected .fs-select-item-option-content {
+  font-weight: 400;
+  color: var(--fs-blue-6);
+}
+
+.fs-select-item.fs-select-item-option-selected
+  .fs-select-item-option-content
+  .fs-checkbox-wrapper
+  .fs-checkbox-inner::after {
+  top: 6px;
+  left: 3px;
+}
+
+// 单独修改多选样式
+.fs-select-multiple {
+  .fs-select-selector {
+    padding-left: 4px;
+    display: inline-flex;
+    width: 100%;
+    vertical-align: top;
+  }
+  .fs-select-selection-placeholder {
+    left: 8px;
+  }
+  .fs-select-selection-item {
+    margin-inline-end: 4px;
+    padding-inline-start: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 22px;
+    line-height: 20px;
+    .fs-select-selection-item-remove:hover {
+      color: var(--fs-blue-6);
+    }
+    .fs-select-selection-item-remove {
+      line-height: 20px;
+    }
+  }
+
+  &.fs-select-lg .fs-select-selection-item {
+    height: 26.8px;
+    line-height: 24.8px;
+    .fs-select-selection-item-remove {
+      line-height: 24px;
+    }
+  }
+
+  &.fs-select-sm .fs-select-selection-item {
+    height: 12px;
+    line-height: 12px;
+    font-size: 12px;
+    .fs-select-selection-item-remove {
+      line-height: 10px;
+    }
+  }
+  &.fs-select-disabled .fs-select-selection-item {
+    color: var(--fs-grey-7);
+    background-color: var(--fs-grey-3);
+  }
+}
+
+// 重写多选select的交互模式
+.fs-select-item {
+  .fs-checkbox-wrapper {
+    margin-right: 8px;
+  }
+  // 选中样式
+  &.fs-select-item-option-selected {
+    .fs-checkbox-wrapper .fs-checkbox-inner {
+      border-color: var(--fs-blue-6);
+      background-color: var(--fs-blue-6);
+      &::after {
+        border: 1.5px solid var(--fs-grey-1);
+        border-top: 0;
+        border-left: 0;
+        top: 5px;
+        left: 2px;
+        transform: rotate(45deg) scale(1) translate(-50%, -50%);
+        opacity: 1;
+        content: ' ';
+      }
+    }
+  }
+  // 禁用样式
+  &.fs-select-item-option-disabled {
+    .fs-checkbox-wrapper .fs-checkbox-inner {
+      background-color: var(--fs-grey-2);
+      border-color: var(--fs-grey-4) !important;
+      box-shadow: none;
+      &::after {
+        border-color: var(--fs-grey-2);
+        border-collapse: separate;
+        animation-name: none;
+      }
+    }
+  }
+  &.fs-select-item-option-disabled.fs-select-item-option-selected {
+    .fs-checkbox-wrapper .fs-checkbox-inner {
+      background-color: var(--fs-grey-3);
+      &::after {
+        border-color: var(--fs-grey-6);
+      }
+    }
+  }
+}
+
+.fs-select-dropdown {
+  padding: 4px 0px 2px 0px;
+  .rc-virtual-list-holder-inner {
+    padding: 0px 4px;
+  }
+  .fs-select-item {
+    border-radius: 3px;
+    background-color: transparent !important;
+    position: relative;
+    min-height: 34px;
+    box-sizing: border-box;
+    padding-bottom: 7px;
+  }
+  // 重写背景色交互方式
+  .fs-select-item-option-active {
+    position: relative;
+  }
+  .fs-select-item::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    transition: background-color 0.3s;
+    content: '';
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .fs-select-item-option-active::before {
+    background-color: var(--fs-buleGrey-base-2);
+  }
+  .fs-select-item-option-selected::before {
+    background-color: var(--fs-blue-1);
+  }
+  // 禁用色
+  .fs-select-item-option-disabled {
+    color: var(--fs-grey-base);
+  }
+}
+
+.fs-select-item-option-state {
+  display: flex;
+  justify-content: center;
+}
+
+// btn_div_relative 在里面的select样式高度
+.btn_div_relative .fs-select-multiple .fs-select-selection-item {
+  height: 20px;
+  line-height: 20px;
+}
+.fs-select-dropdown .fs-select-item-group.fs-select-item {
+  font-size: 12px;
+}

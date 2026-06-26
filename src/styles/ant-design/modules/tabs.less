@@ -1,0 +1,138 @@
+.fs-tabs:not(.fs-tabs-card) {
+  .fs-tabs-tab {
+    height: 48px;
+  }
+}
+.fs-tabs-card.fs-tabs-card--border {
+  .fs-tabs-tab {
+    height: 56px;
+  }
+}
+.fs-tabs {
+  .fs-tabs-tab .anticon {
+    margin-right: calc(var(--fs-len-base) / 2);
+  }
+  .fs-tabs-tab.fs-tabs-tab-active .fs-tabs-tab-btn {
+    font-weight: 500;
+    color: var(--fs-blue-base);
+  }
+  .fs-tabs-tab-btn {
+    transition: none;
+  }
+  .fs-tabs-tab-btn:focus,
+  .fs-tabs-tab-remove:focus,
+  .fs-tabs-tab-btn:active,
+  .fs-tabs-tab-remove:active {
+    color: var(--fs-blue-5);
+  }
+  &.fs-tabs-card {
+    > .fs-tabs-nav .fs-tabs-tab {
+      padding: calc(var(--fs-len-base) / 2) calc(var(--fs-len-base) * 2);
+    }
+    &.fs-tabs-card--border {
+      > .fs-tabs-nav .fs-tabs-tab {
+        padding: calc(var(--fs-len-base) / 2) 32px;
+      }
+    }
+  }
+  // 修改tab下面的线条颜色为浅灰色
+  &.fs-tabs-top > .fs-tabs-nav::before {
+    border-bottom: 1px solid #eeeeee;
+  }
+}
+// UI设计的特殊标签页
+.fs-tabs.fs-tabs--special {
+  .fs-tabs-nav {
+    &::before {
+      content: '';
+      display: none;
+    }
+  }
+  .fs-tabs-tab.fs-tabs-tab-active .fs-tabs-tab-btn {
+    color: var(--fs-grey-9);
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .fs-tabs-ink-bar {
+    display: none;
+  }
+  .fs-tabs-tab-active {
+    @w: 32px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: @w;
+      height: 2px;
+      left: 50%;
+      margin-left: -(@w / 2);
+      bottom: 0;
+      background: var(--fs-blue-base);
+    }
+  }
+}
+
+// 边框选项卡
+.fs-tabs-card.fs-tabs-card--border {
+  > .fs-tabs-nav .fs-tabs-tab,
+  > .fs-tabs-nav .fs-tabs-tab + .fs-tabs-tab {
+    margin-left: 0;
+    border-radius: 0;
+  }
+  .fs-tabs-nav .fs-tabs-tab {
+    border-top: none;
+  }
+  > .fs-tabs-nav .fs-tabs-tab {
+    background: var(--fs-grey-1);
+  }
+  .fs-tabs-nav .fs-tabs-tab {
+    border: 1px solid transparent;
+    border-bottom-color: #f0f0f0;
+  }
+  .fs-tabs-tab.fs-tabs-tab-active {
+    border-left-color: #f0f0f0;
+    border-right-color: #f0f0f0;
+    border-bottom-color: transparent;
+
+    ::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      border-bottom: 2px solid var(--fs-blue-base);
+    }
+  }
+}
+
+// 胶囊选项卡
+.fs-tabs-card.fs-tabs-card--capsule {
+  > .fs-tabs-nav::before {
+    content: '';
+    display: none;
+  }
+  > .fs-tabs-nav .fs-tabs-tab + .fs-tabs-tab {
+    margin-left: 0;
+  }
+  > .fs-tabs-nav .fs-tabs-tab {
+    border-radius: 0;
+  }
+  > .fs-tabs-nav .fs-tabs-tab {
+    background: var(--fs-grey-1);
+  }
+  > .fs-tabs-nav .fs-tabs-tab:first-child {
+    border-radius: var(--fs-radius-base) 0 0 var(--fs-radius-base);
+  }
+  > .fs-tabs-nav .fs-tabs-tab:not(.fs-tabs-nav :has(+ .fs-tabs-tab)) {
+    border-radius: 0 var(--fs-radius-base) var(--fs-radius-base) 0;
+  }
+  > .fs-tabs-nav .fs-tabs-tab.fs-tabs-tab-active {
+    background: var(--fs-blue-base);
+    border-color: var(--fs-blue-base);
+    .fs-tabs-tab-btn {
+      color: var(--fs-grey-1);
+    }
+  }
+  .fs-tabs-tab:hover:not(.fs-tabs-tab-disabled) {
+    border-color: var(--fs-blue-base);
+  }
+}

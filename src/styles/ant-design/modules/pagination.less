@@ -1,0 +1,168 @@
+.fs-pagination-slash {
+  margin: 0 8px 0 0;
+}
+.fs-pagination {
+  .fs-pagination-prev .fs-pagination-item-link,
+  .fs-pagination-next .fs-pagination-item-link {
+    border: 1px solid transparent !important;
+    color: var(--fs-grey-9);
+  }
+  .fs-pagination-prev .fs-pagination-item-link:hover,
+  .fs-pagination-next .fs-pagination-item-link:hover {
+    border: 1px solid var(--fs-blue-base) !important;
+    color: var(--fs-blue-base);
+  }
+  .fs-pagination-prev.fs-pagination-disabled .fs-pagination-item-link,
+  .fs-pagination-next.fs-pagination-disabled .fs-pagination-item-link {
+    color: var(--fs-grey-base);
+  }
+  .fs-pagination-prev.fs-pagination-disabled .fs-pagination-item-link:hover,
+  .fs-pagination-next.fs-pagination-disabled .fs-pagination-item-link:hover {
+    color: var(--fs-grey-base);
+    border: 1px solid var(--fs-grey-5) !important;
+  }
+  .fs-pagination-item {
+    border-color: var(--fs-grey-4);
+    min-width: 32px;
+    height: 32px;
+  }
+  .fs-pagination-item:hover {
+    border-color: var(--fs-blue-base);
+  }
+  .fs-pagination-item-active {
+    font-weight: 500;
+    background: var(--fs-grey-1);
+    border-color: var(--fs-blue-base);
+  }
+  .fs-pagination-prev button,
+  .fs-pagination-next button {
+    color: var(--fs-grey-base);
+  }
+  .fs-pagination-options {
+    margin-left: 8px;
+  }
+}
+
+.fs-pagination-options-quick-jumper {
+  width: 84px;
+  overflow: hidden;
+  input {
+    margin-right: 0 !important;
+  }
+}
+
+//mini
+.fs-pagination.mini {
+  .fs-pagination-prev .fs-pagination-item-link:hover,
+  .fs-pagination-next .fs-pagination-item-link:hover {
+    border: 1px solid var(--fs-blue-base) !important;
+    color: var(--fs-blue-base) !important;
+  }
+  .fs-pagination-options {
+    margin-left: 8px !important;
+  }
+  .fs-pagination-prev {
+    margin-right: 8px !important;
+  }
+  .fs-pagination-prev.fs-pagination-disabled .fs-pagination-item-link:hover,
+  .fs-pagination-next.fs-pagination-disabled .fs-pagination-item-link:hover {
+    border: 1px solid var(--fs-grey-5) !important;
+    color: var(--fs-grey-base) !important;
+  }
+  .fs-pagination-prev.fs-pagination-disabled .fs-pagination-item-link,
+  .fs-pagination-next.fs-pagination-disabled .fs-pagination-item-link {
+    color: var(--fs-grey-base);
+  }
+  .fs-pagination-item {
+    width: 24px;
+    height: 24px;
+    background: var(--fs-grey-1);
+    border-radius: 3px;
+    border: 1px solid var(--fs-grey-4) !important;
+    margin-right: 8px !important;
+    a {
+      padding: 0;
+    }
+  }
+  .fs-pagination-item:hover {
+    border-color: var(--fs-blue-base) !important;
+  }
+}
+
+.fs-pagination.mini .fs-pagination-item-active {
+  font-weight: 500;
+  background: var(--fs-grey-1);
+  border-color: var(--fs-blue-base) !important;
+}
+
+.fs-pagination.mini .fs-pagination-item-container {
+  margin-right: 8px;
+}
+
+//selcet
+.fs-pagination .fs-pagination-options .fs-select .fs-select-selection-item {
+  padding-right: 19px;
+}
+
+//简洁分页
+.fs-pagination-simple {
+  .fs-pagination-simple-pager input {
+    width: 40px;
+    height: 32px;
+    background: var(--fs-grey-1);
+    border-radius: 3px;
+    border: 1px solid var(--fs-grey-4);
+  }
+  .fs-pagination-prev,
+  .fs-pagination-next {
+    height: 32px !important;
+    line-height: 32px;
+
+    .fs-pagination-item-link {
+      height: 32px !important;
+    }
+  }
+  .fs-pagination-prev .fs-pagination-item-link:hover,
+  .fs-pagination-next .fs-pagination-item-link:hover {
+    border: 1px solid var(--fs-blue-base);
+  }
+
+  .fs-pagination-prev.fs-pagination-disabled .fs-pagination-item-link:hover,
+  .fs-pagination-next.fs-pagination-disabled .fs-pagination-item-link:hover {
+    border: 1px solid var(--fs-grey-5);
+  }
+  .fs-pagination-simple-pager {
+    height: 32px !important;
+    input {
+      width: 40px;
+      height: 32px !important;
+    }
+  }
+}
+
+.fs-pagination-simple.mini {
+  .fs-pagination-prev,
+  .fs-pagination-next {
+    height: 24px !important;
+    .fs-pagination-item-link {
+      border: 1px solid transparent !important;
+      height: 24px !important;
+    }
+    .fs-pagination-item-link:hover {
+      border: 1px solid var(--fs-blue-base) !important;
+      color: var(--fs-blue-base) !important;
+    }
+  }
+  .fs-pagination-prev.fs-pagination-disabled .fs-pagination-item-link:hover,
+  .fs-pagination-next.fs-pagination-disabled .fs-pagination-item-link:hover {
+    border: 1px solid var(--fs-grey-5) !important;
+    color: var(--fs-grey-base);
+  }
+  .fs-pagination-simple-pager {
+    height: 24px !important;
+    input {
+      height: 24px !important;
+      width: 40px;
+    }
+  }
+}
