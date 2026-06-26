@@ -20,5 +20,6 @@ declare module 'vue' {
     ConfigProvider: typeof import('./../components/business/configProvider/Index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SvgIcon: typeof import('./../components/ui/svgIcon/Index.vue')['default']
   }
 }

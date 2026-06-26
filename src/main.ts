@@ -8,6 +8,7 @@ import './styles/ant-design/index.less'
 import 'virtual:svg-icons-register'
 import './styles/style.less'
 import 'uno.css'
+import './assets/iconfont/iconfont.css'
 
 async function bootstrap() {
   const app = createApp(App)
