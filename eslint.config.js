@@ -4,6 +4,7 @@ import tseslint from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
 import prettier from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
+import autoImport from './.eslintrc-auto-import.js';
 
 export default [
   // 1. 全局忽略配置（必须放在最前面！！！）
