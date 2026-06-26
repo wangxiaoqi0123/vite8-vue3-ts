@@ -8,6 +8,9 @@
     "predev": "node scripts/check-node.js",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
+    "lint": "eslint src/ --fix && prettier --write src/",
+    "lint:eslint": "eslint src/ --fix",
+    "lint:prettier": "prettier --write src/",
     "prepare": "husky"
   },
   "dependencies": {
