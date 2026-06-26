@@ -1,13 +1,12 @@
-import globals from 'globals';
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import pluginVue from 'eslint-plugin-vue';
-import prettier from 'eslint-config-prettier';
-import prettierPlugin from 'eslint-plugin-prettier';
-import autoImport from './.eslintrc-auto-import.js';
+import globals from 'globals'
+import pluginJs from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import pluginVue from 'eslint-plugin-vue'
+import prettier from 'eslint-config-prettier'
+import prettierPlugin from 'eslint-plugin-prettier'
+import autoImport from './.eslintrc-auto-import.js'
 
 export default [
-  // 1. 全局忽略配置（必须放在最前面！！！）
   {
     ignores: [
       'public/**',
@@ -23,68 +22,59 @@ export default [
       '**/.env',
       '**/.env.*',
       '**/pnpm-lock.yaml',
-      '**/package-lock.json',
-    ],
+      '**/package-lock.json'
+    ]
   },
-
-  // 2. 全局语言选项（基础配置）
   {
     files: ['**/*.{js,mjs,cjs,ts,vue}'],
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node, // 添加 Node globals（用于 vite.config.ts 等）
-        ...(autoImport.globals || {}),
-      },
-    },
+        ...globals.node,
+        ...(autoImport.globals || {})
+      }
+    }
   },
-
-  // 3. JavaScript 推荐规则
   pluginJs.configs.recommended,
-  // 4. TypeScript 推荐规则
   ...tseslint.configs.recommended,
-  // 5. Vue 3 核心规则
   ...pluginVue.configs['flat/essential'],
-  // 6. Prettier 集成（关闭冲突规则 + 启用插件）
   prettier,
   {
     plugins: {
-      prettier: prettierPlugin,
+      prettier: prettierPlugin
     },
     rules: {
-      'prettier/prettier': 'error',
-    },
+      'prettier/prettier': 'error'
+    }
   },
-  // 7. Vue + TypeScript 专用规则（覆盖）
   {
     files: ['**/*.vue'],
     languageOptions: {
       parserOptions: {
         parser: tseslint.parser,
         ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
+        sourceType: 'module'
+      }
     },
     rules: {
-      // 关闭/调整 Vue 规则
       'vue/multi-word-component-names': 'off',
       'vue/no-v-html': 'off',
       'vue/require-default-prop': 'off',
       'vue/require-explicit-emits': 'off',
       'vue/attribute-hyphenation': [
         'error',
-        'always',  // 或 'never'，这里用 always 强制短横线
+        'always',
         {
-          ignore: [],  // 可以忽略某些属性
-        },
+          ignore: [] // 可以忽略某些属性
+        }
       ],
       'vue/component-name-in-template-casing': [
         'error',
-        'PascalCase',  // 强制 PascalCase
+        'PascalCase', // 强制 PascalCase
         {
-          registeredComponentsOnly: true, 
-          ignores: ['index','Index'],      
-        },
+          registeredComponentsOnly: false,
+          ignores: ['index', 'Index']
+        }
       ],
       'vue/attributes-order': [
         'error',
@@ -100,14 +90,13 @@ export default [
             'OTHER_DIRECTIVES',
             'OTHER_ATTR',
             'EVENTS',
-            'CONTENT',
+            'CONTENT'
           ],
-          alphabetical: false,
-        },
-      ],
-    },
+          alphabetical: false
+        }
+      ]
+    }
   },
-  // 8. TypeScript 规则覆盖（仅对 TS 和 Vue 文件生效）
   {
     files: ['**/*.ts', '**/*.vue'],
     rules: {
@@ -122,10 +111,7 @@ export default [
       '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-unused-expressions': 'off',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
-      ],
-    },
-  },
-];
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }]
+    }
+  }
+]

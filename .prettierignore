@@ -1,0 +1,8 @@
+dist
+build
+coverage
+.vscode
+.idea
+*.min.js
+*.min.css
+*.log
